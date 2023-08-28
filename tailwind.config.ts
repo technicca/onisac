@@ -5,5 +5,6 @@ export default {
   theme: {
     extend: {},
   },
+  darkMode: 'class', // add this line
   plugins: [],
-} satisfies Config;
+} as Config;

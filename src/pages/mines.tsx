@@ -1,4 +1,5 @@
 import React, { useCallback, useState, useMemo, Fragment } from 'react';
+import { useTheme } from 'next-themes';
 import { motion } from "framer-motion";
 import emoji from "react-easy-emoji";
 import { generateMines } from "../lib/config";
@@ -10,7 +11,10 @@ import Background from '../components/background-effect';
 const BombLogo = "/assets/images/bomb.png";
 const TileLogo = "/assets/images/tile.png";
 
+
 export default function Mines() {
+  const { theme, setTheme } = useTheme();
+
   const tile = useMemo(() => new Howl({ src: ["/assets/sounds/tile.mp3"], volume: 0.7, preload: true }), []);
   const bomb = useMemo(() => new Howl({ src: ["/assets/sounds/bomb.mp3"], volume: 0.7, preload: true }), []);
   const [gameData, setGameData] = useState<{ mines: number[]; isGameOver?: boolean }>({ mines: generateMines() });
@@ -60,7 +64,7 @@ export default function Mines() {
                   whileHover={{ scale: 0.9 }}
                   whileTap={{ scale: 1.1 }}
                   onClick={() => onCheckBlock(i)}
-                  className={`tile-active transition-all ${gameData.isGameOver || clickBlocks.includes(i) ? (gameData.mines.includes(i) ? "tile-bomb" : "tile-star") : ""}`}
+                  className={`h-16 shadow-md cursor-pointer rounded-md w-full flex justify-center items-center p-2 outline-none transition-all ${gameData.isGameOver || clickBlocks.includes(i) ? (gameData.mines.includes(i) ? "bg-red-500/10 border-4 border-red-500" : "bg-yellow-500/10 border-4 border-yellow-500") : "bg-blue-500"}`}
                 >
                   {gameData.isGameOver || clickBlocks.includes(i) ? (
                     <motion.div
@@ -88,10 +92,15 @@ export default function Mines() {
               <motion.button
                 onClick={onRestart}
                 disabled={!gameData.isGameOver}
-                className="h-12 disabled:dark:bg-amber-600/10 disabled:cursor-not-allowed disabled:dark:text-zinc-500 w-full rounded-xl p-1 text-base font-semibold shadow transition-all dark:bg-amber-600 dark:focus:ring-2 dark:focus:ring-amber-600 dark:focus:ring-offset-1 dark:focus:ring-offset-secondary-dark"
+                className="h-12 disabled:dark:bg-amber-600/10 disabled:bg-amber-400/40 disabled:cursor-not-allowed disabled:dark:text-zinc-500 w-full rounded-xl p-1 text-base font-semibold shadow transition-all bg-amber-600 dark:focus:ring-2 focus:ring-amber-600 dark:focus:ring-offset-1 dark:focus:ring-offset-secondary-dark"
               >
                 Restart
               </motion.button>
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              >
+                Toggle theme
+              </button>
             </div>
           </div>
         </div>
