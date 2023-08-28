@@ -13,6 +13,7 @@
     "@types/howler": "^2.2.8",
     "framer-motion": "^10.12.18",
     "howler": "^2.2.3",
+    "keyframes": "^2.3.0",
     "million": "^2.4.9",
     "next": "^13.4.13",
     "next-themes": "^0.2.1",

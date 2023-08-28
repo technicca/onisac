@@ -2,18 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "monogram";
+  src: url("../../public/bjack/fonts/monogram.ttf");
+}
+
+body {
+  @apply bg-bg font-monogram  flex justify-center m-0 p-0
+}
+
+#dealerHand div:nth-child(5) {
+  @apply left-10
+}
+
+#dealerHand div:nth-child(6) {
+  @apply left-28
+}
+
+#dealerHand div:nth-child(7) {
+  @apply left-44
+}
+
+#dealerHand div:nth-child(8) {
+  @apply left-60
+}
+
+#playerHand div:nth-child(3) {
+  @apply z-10 -ml-6 -rotate-3
+}
+
+#playerHand div:nth-child(4) {
+  @apply z-20 -ml-6 rotate-3
+}
+
+#playerHand div:nth-child(5) {
+  @apply left-10
+}
+
+#playerHand div:nth-child(6) {
+  @apply left-36
+}
+
+#playerHand div:nth-child(7) {
+  @apply left-64
+}
+
+#playerHand div:last-child {
+  @apply z-50 mt-4 rotate-12 -ml-6
+}
+
 @supports (backdrop-filter: blur(20px)) {
-    .translucent {
-      --tw-bg-opacity: 0.8 !important;
-      backdrop-filter: saturate(180%) blur(20px);
-    }
+  .translucent {
+    --tw-bg-opacity: 0.8 !important;
+    backdrop-filter: saturate(180%) blur(20px);
   }
- .tile-active {
-   @apply h-16 shadow-md cursor-pointer rounded-md w-full dark:bg-blue-500 flex justify-center items-center p-2 outline-none;
- }
- .tile-star {
-   @apply h-16 shadow-md cursor-pointer rounded-md w-full dark:bg-yellow-500/10 border-4 dark:border-yellow-500 flex justify-center items-center p-2 outline-none;
- }
- .tile-bomb {
-   @apply h-16 shadow-md cursor-pointer rounded-md w-full dark:bg-red-500/10 border-4 dark:border-red-500 flex justify-center items-center p-2 outline-none;
- }
+}
+.tile-active {
+ @apply h-16 shadow-md cursor-pointer rounded-md w-full dark:bg-blue-500 flex justify-center items-center p-2 outline-none;
+}
+.tile-star {
+ @apply h-16 shadow-md cursor-pointer rounded-md w-full dark:bg-yellow-500/10 border-4 dark:border-yellow-500 flex justify-center items-center p-2 outline-none;
+}
+.tile-bomb {
+ @apply h-16 shadow-md cursor-pointer rounded-md w-full dark:bg-red-500/10 border-4 dark:border-red-500 flex justify-center items-center p-2 outline-none;
+}
