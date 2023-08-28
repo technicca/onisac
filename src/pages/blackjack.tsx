@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "../entities/card";
 
-function Game() {
+function Blackjack() {
   
   const [gameStarted, setGameStarted] = useState(false);
 
@@ -222,4 +222,4 @@ function Game() {
   )
 }
 
-export default Game
+export default Blackjack
