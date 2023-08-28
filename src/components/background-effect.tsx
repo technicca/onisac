@@ -3,7 +3,7 @@ import { memo } from 'react';
 import Image from 'next/image';
 
 const BombLogo = "/assets/images/bomb.png";
-const TileLogo = "/assets/images/tile.png";
+const TileLogo = "/assets/images/money.png";
 const icons = [BombLogo, TileLogo];
 
 const Background = memo(() => {

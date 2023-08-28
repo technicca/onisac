@@ -9,7 +9,7 @@ import Head from 'next/head';
 import Background from '../components/background-effect';
 
 const BombLogo = "/assets/images/bomb.png";
-const TileLogo = "/assets/images/tile.png";
+const TileLogo = "/assets/images/money.png";
 
 
 export default function Mines() {
@@ -92,7 +92,7 @@ export default function Mines() {
               <motion.button
                 onClick={onRestart}
                 disabled={!gameData.isGameOver}
-                className="h-12 disabled:dark:bg-amber-600/10 disabled:bg-amber-400/40 disabled:cursor-not-allowed disabled:dark:text-zinc-500 w-full rounded-xl p-1 text-base font-semibold shadow transition-all bg-amber-600 dark:focus:ring-2 focus:ring-amber-600 dark:focus:ring-offset-1 dark:focus:ring-offset-secondary-dark"
+                className="h-12 disabled:dark:bg-amber-600/10 disabled:bg-amber-400/40 disabled:cursor-not-allowed disabled:dark:text-zinc-500 w-full rounded-xl p-1 text-neutral-200 dark:text-base font-semibold shadow transition-all bg-amber-600 dark:focus:ring-2 focus:ring-amber-600 dark:focus:ring-offset-1 dark:focus:ring-offset-secondary-dark"
               >
                 Restart
               </motion.button>
